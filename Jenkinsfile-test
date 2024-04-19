@@ -1,7 +1,9 @@
 pipeline {
     agent any
     tools {
+        git 'Default'
         maven 'mvn'
+        java 'java-17.0.8.1'
     }
 
     stages {
