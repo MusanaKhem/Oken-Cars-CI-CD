@@ -5,11 +5,15 @@ pipeline {
     }
 
     stages {
+        stage('Checkout SCM') {
+            steps {
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'GitHub_Access_Username_Password', url: 'https://github.com/MusanaKhem/Oken-Cars-CI-CD.git']])
+            }
+        }
         stage('Build') {
             steps {
                 echo 'Hello World'
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'GitHub_Access_Username_Password', url: 'https://github.com/MusanaKhem/Oken-Cars-CI-CD.git']])
-                sh "mvn -Dmaven.test.failure.ignore-true clean package"
+                sh "cd spring mvn clean install -DskipTests"
             }
         }
     }
