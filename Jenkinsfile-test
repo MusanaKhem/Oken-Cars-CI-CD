@@ -3,19 +3,18 @@ pipeline {
     tools {
         git 'Default'
         maven 'mvn'
-        java 'java-17.0.8.1'
     }
 
     stages {
         stage('Checkout SCM') {
             steps {
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'GitHub_Access_Username_Password', url: 'https://github.com/MusanaKhem/Oken-Cars-CI-CD.git']])
+                checkout scmGit(branches: [[name: '*/develop']], extensions: [], userRemoteConfigs: [[credentialsId: 'GitHub_Access_Username_Password', url: 'https://github.com/MusanaKhem/Oken-Cars-CI-CD.git']])
             }
         }
         stage('Build') {
             steps {
                 echo 'Hello World'
-                sh "cd spring mvn clean install -DskipTests"
+                sh "mvn clean install -DskipTests"
             }
         }
     }
@@ -25,14 +24,13 @@ pipeline {
             mail to: "hermann.acm@gmail.com",
                  subject: "${env.JOB_NAME} - Build # ${env.BUILD_ID} is success",
                  body: "Hi, this is Hermann, Jenkins pipeline was realized with success."
-    }
+        }
 
         failure {
             echo "This will run if the job failed"
             mail to: "hermann.acm@gmail.com",
                 subject: "${env.JOB_NAME} - Build # ${env.BUILD_ID} has failed",
                 body: "Hi, this is Hermann, Jenkins pipeline failed. for more info on the pipeline failure, check out the console output at ${env.BUILD_URL}"
-    }
+        }
     }
 }
-
