@@ -1,0 +1,310 @@
+<div class="container-fluid" style="margin-top: 35px;">
+    <div class="card" >
+      <div class="card-header">
+        <strong>ADD NEW CAR</strong>
+      </div>
+      <br><br>
+      <form (ngSubmit)="addCar()" #editFormCar="ngForm">
+        <div class="row">
+            <div class="col-md-4"><label> Brand</label></div>
+            <div class="col-md-7">
+              <select class="custom-select" id="brandOfCars" type="text" [(ngModel)]="car.brand" name="brand" required>
+                <option value="">Select the brand of your car</option>
+                <option value="Renault">Renault</option>
+                <option value="Peugeot">Peugeot</option>
+                <option value="Citroen">Citroen</option>
+                <option value="Volkswagen">Volkswagen</option>
+                <option value="Dacia">Dacia</option>
+                <option value="Toyota">Toyota</option>
+                <option value="Ford">Ford</option>
+                <option value="Fiat">Fiat</option>
+                <option value="Mercedes">Mercedes</option>
+                <option value="Opel">Opel</option>
+                <option value="BMW">BMW</option>
+                <option value="Audi">Audi</option>
+                <option value="Kia">Kia</option>
+                <option value="Nissan">Nissan</option>
+                <option value="Hyundai">Hyundai</option>
+                <option value="Seat">Seat</option>
+                <option value="Skoda">Skoda</option>
+                <option value="Suzuki">Suzuki</option>
+                <option value="Mini">Mini</option>
+                <option value="DS">DS</option>
+                <option value="Volvo">Volvo</option>
+                <option value="Mazda">Mazda</option>
+                <option value="Jeep">Jeep</option>
+                <option value="Smart">Smart</option>
+                <option value="Honda">Honda</option>
+                <option value="Land Rover">Land Rover</option>
+                <option value="Tesla">Tesla</option>
+                <option value="Mitsubishi">Mitsubishi</option>
+                <option value="Lexus">Lexus</option>
+                <option value="Porsche">Porsche</option>
+                <option value="Alfa Romeo">Alfa Romeo</option>
+                <option value="Chevrolet Blazer">Chevrolet Blazer</option>
+              </select>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-4"><label> Mileage</label></div>
+            <div class="col-md-7"><input class="form-control" type="number" placeholder="mileage (km) " [(ngModel)]="car.mileage" name="mileage" required></div>
+        </div>
+        <br>
+        <div class="input-group mb-3" style=" width: 70%; margin-right: 15%;margin-left: 15%;">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">Model</label>
+                  </div>
+                  <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="car.model" name="model" required>
+                          <option value="">Select a model</option>
+                                <!-- Modèles pour la marque Renault -->
+                                <optgroup label="Renault">
+                                  <option value="Clio">Clio</option>
+                                  <option value="Megane">Megane</option>
+                                  <option value="Captur">Captur</option>
+                                  <option value="Kadjar">Kadjar</option>
+                                  <option value="Scenic">Scenic</option>
+                                  <option value="Twingo">Twingo</option>
+                                </optgroup>
+                                <!-- Modèles pour la marque Peugeot -->
+                                <optgroup label="Peugeot">
+                                  <option value="208">208</option>
+                                  <option value="308">308</option>
+                                  <option value="2008">2008</option>
+                                  <option value="3008">3008</option>
+                                  <option value="5008">5008</option>
+                                </optgroup>
+                                <optgroup label="Citroen">
+                                  <option value="C3">C3</option>
+                                  <option value="C4">C4</option>
+                                  <option value="C5">C5</option>
+                                  <option value="Berlingo">Berlingo</option>
+                                </optgroup>
+                                <optgroup label="Volkswagen">
+                                  <option value="Golf">Golf</option>
+                                  <option value="Passat">Passat</option>
+                                  <option value="Polo">Polo</option>
+                                  <option value="Tiguan">Tiguan</option>
+                                  <option value="Jetta">Jetta</option>
+                                </optgroup>
+                                <optgroup label="Dacia">
+                                  <option value="Sandero">Sandero</option>
+                                  <option value="Logan">Logan</option>
+                                  <option value="Duster">Duster</option>
+                                </optgroup>
+                                <optgroup label="Toyota">
+                                  <option value="Corolla">Corolla</option>
+                                  <option value="Camry">Camry</option>
+                                  <option value="RAV4">RAV4</option>
+                                  <option value="Prius">Prius</option>
+                                  <option value="Highlander">Highlander</option>
+                                </optgroup>
+                                <optgroup label="Ford">
+                                  <option value="Fiesta">Fiesta</option>
+                                  <option value="Focus">Focus</option>
+                                  <option value="Mustang">Mustang</option>
+                                  <option value="Escape">Escape</option>
+                                  <option value="Explorer">Explorer</option>
+                                </optgroup>
+                                <optgroup label="Fiat">
+                                  <option value="500">500</option>
+                                  <option value="Punto">Punto</option>
+                                  <option value="Tipo">Tipo</option>
+                                  <option value="124 Spider">124 Spider</option>
+                                </optgroup>
+                                <optgroup label="Mercedes">
+                                  <option value="C-Class">C-Class</option>
+                                  <option value="E-Class">E-Class</option>
+                                  <option value="S-Class">S-Class</option>
+                                  <option value="GLC">GLC</option>
+                                  <option value="GLE">GLE</option>
+                                </optgroup>
+                                <optgroup label="Opel">
+                                  <option value="Astra">Astra</option>
+                                  <option value="Corsa">Corsa</option>
+                                  <option value="Insignia">Insignia</option>
+                                  <option value="Mokka">Mokka</option>
+                                </optgroup>
+                                <optgroup label="BMW">
+                                  <option value="3 Series">3 Series</option>
+                                  <option value="5 Series">5 Series</option>
+                                  <option value="X3">X3</option>
+                                  <option value="X5">X5</option>
+                                  <option value="7 Series">7 Series</option>
+                                </optgroup>
+                                <optgroup label="Audi">
+                                  <option value="A3">A3</option>
+                                  <option value="A4">A4</option>
+                                  <option value="A6">A6</option>
+                                  <option value="Q3">Q3</option>
+                                  <option value="Q5">Q5</option>
+                                </optgroup>
+                                <optgroup label="Kia">
+                                  <option value="Rio">Rio</option>
+                                  <option value="Forte">Forte</option>
+                                  <option value="Optima">Optima</option>
+                                  <option value="Sorento">Sorento</option>
+                                  <option value="Sportage">Sportage</option>
+                                </optgroup>
+                                <optgroup label="Nissan">
+                                  <option value="Altima">Altima</option>
+                                  <option value="Maxima">Maxima</option>
+                                  <option value="Rogue">Rogue</option>
+                                  <option value="Pathfinder">Pathfinder</option>
+                                  <option value="Juke">Juke</option>
+                                </optgroup>
+                                <optgroup label="Hyundai">
+                                  <option value="Elantra">Elantra</option>
+                                  <option value="Sonata">Sonata</option>
+                                  <option value="Tucson">Tucson</option>
+                                  <option value="Santa Fe">Santa Fe</option>
+                                  <option value="Kona">Kona</option>
+                                </optgroup>
+                                <optgroup label="Seat">
+                                  <option value="Ibiza">Ibiza</option>
+                                  <option value="Leon">Leon</option>
+                                  <option value="Ateca">Ateca</option>
+                                  <option value="Tarraco">Tarraco</option>
+                                </optgroup>
+                                <optgroup label="Skoda">
+                                  <option value="Octavia">Octavia</option>
+                                  <option value="Superb">Superb</option>
+                                  <option value="Kodiaq">Kodiaq</option>
+                                  <option value="Karoq">Karoq</option>
+                                </optgroup>
+                                <optgroup label="Suzuki">
+                                  <option value="Swift">Swift</option>
+                                  <option value="Vitara">Vitara</option>
+                                  <option value="SX4">SX4</option>
+                                  <option value="Jimny">Jimny</option>
+                                </optgroup>
+                                <optgroup label="Mini">
+                                  <option value="Cooper">Cooper</option>
+                                  <option value="Countryman">Countryman</option>
+                                  <option value="Clubman">Clubman</option>
+                                  <option value="Paceman">Paceman</option>
+                                </optgroup>
+                                <optgroup label="DS">
+                                  <option value="DS 3">DS 3</option>
+                                  <option value="DS 4">DS 4</option>
+                                  <option value="DS 5">DS 5</option>
+                                </optgroup>
+                                <optgroup label="Volvo">
+                                  <option value="S60">S60</option>
+                                  <option value="S90">S90</option>
+                                  <option value="XC40">XC40</option>
+                                  <option value="XC60">XC60</option>
+                                  <option value="XC90">XC90</option>
+                                </optgroup>
+                                <optgroup label="Mazda">
+                                  <option value="Mazda3">Mazda3</option>
+                                  <option value="Mazda6">Mazda6</option>
+                                  <option value="CX-5">CX-5</option>
+                                  <option value="MX-5">MX-5</option>
+                                </optgroup>
+                                <optgroup label="Jeep">
+                                  <option value="Cherokee">Cherokee</option>
+                                  <option value="Grand Cherokee">Grand Cherokee</option>
+                                  <option value="Wrangler">Wrangler</option>
+                                  <option value="Renegade">Renegade</option>
+                                  <option value="Compass">Compass</option>
+                                </optgroup>
+                                <optgroup label="Smart">
+                                  <option value="Fortwo">Fortwo</option>
+                                  <option value="Forfour">Forfour</option>
+                                </optgroup>
+                                <optgroup label="Honda">
+                                  <option value="Civic">Civic</option>
+                                  <option value="Accord">Accord</option>
+                                  <option value="CR-V">CR-V</option>
+                                  <option value="Fit">Fit</option>
+                                  <option value="HR-V">HR-V</option>
+                                </optgroup>
+                                <optgroup label="Land Rover">
+                                  <option value="Range Rover">Range Rover</option>
+                                  <option value="Discovery">Discovery</option>
+                                  <option value="Evoque">Evoque</option>
+                                  <option value="Defender">Defender</option>
+                                </optgroup>
+                                <optgroup label="Tesla">
+                                  <option value="Model S">Model S</option>
+                                  <option value="Model 3">Model 3</option>
+                                  <option value="Model X">Model X</option>
+                                  <option value="Model Y">Model Y</option>
+                                </optgroup>
+                                <optgroup label="Mitsubishi">
+                                  <option value="Outlander">Outlander</option>
+                                  <option value="Lancer">Lancer</option>
+                                  <option value="Eclipse Cross">Eclipse Cross</option>
+                                </optgroup>
+                                <optgroup label="Lexus">
+                                  <option value="ES">ES</option>
+                                  <option value="RX">RX</option>
+                                  <option value="NX">NX</option>
+                                  <option value="IS">IS</option>
+                                  <option value="GX">GX</option>
+                                </optgroup>
+                                <optgroup label="Porsche">
+                                  <option value="911">911</option>
+                                  <option value="Cayenne">Cayenne</option>
+                                  <option value="Panamera">Panamera</option>
+                                  <option value="Macan">Macan</option>
+                                </optgroup>
+                                <optgroup label="Alfa Romeo">
+                                  <option value="Giulia">Giulia</option>
+                                  <option value="Stelvio">Stelvio</option>
+                                </optgroup>
+                                <optgroup label="Chevrolet Blazer">
+                                  <option value="Blazer">Blazer</option>
+                                </optgroup>
+                  </select>
+        </div>
+
+
+        <div class="input-group mb-3" style=" width: 70%;
+                                              margin-right: 15%;
+                                              margin-left: 15%;">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Color</label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect02" [(ngModel)]="car.color" name="color" required>
+            <option value="">Choose a color</option>
+            <option value="Other ...">Other ...</option>
+            <option value="White">White</option>
+            <option value="Black">Black</option>
+            <option value="Gray">Gray</option>
+            <option value="Red">Red</option>
+            <option value="Blue">Blue</option>
+            <option value="Green">Green</option>
+            <option value="Yellow">Yellow</option>
+            <option value="Orange">Orange</option>
+            <option value="Brown">Brown</option>
+            <option value="Silver">Silver</option>
+            <option value="Gold">Gold</option>
+            <option value="Purple">Purple</option>
+            <option value="Pink">Pink</option>
+          </select>
+        </div>
+
+        <br>
+        <button type="submit" class="btn btn-outline-primary" [disabled]="editFormCar.invalid">Add this car</button>
+        <br><br>
+
+      </form>
+
+    </div>
+</div>
+
+<!-- Start - Section FOOTER - PIED DE PAGE - OK -->
+<section class="supfooter">
+  <footer class="footer">
+
+    <!-- Start - COPYRIGHT - OK -->
+    <div class="copyright text-center">
+      &copy;<p>2023<span> Oken Cars. </span>All rights reserved.</p>
+    </div>
+    <!-- End - COPYRIGHT - OK -->
+
+  </footer>
+</section>
+<!-- End - Section FOOTER - PIED DE PAGE - OK -->

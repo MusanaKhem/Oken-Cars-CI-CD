@@ -1,0 +1,13 @@
+---
+- name: Download Maven 3.9.4
+  get_url:
+    url: "https://downloads.apache.org/maven/maven-3/3.9.4/binaries/apache-maven-3.9.4-bin.tar.gz"
+    dest: /opt/apache-maven-3.9.4-bin.tar.gz
+
+- name: Extract Maven 3.9.4
+  become: yes
+  ansible.builtin.unarchive:
+    src: /opt/apache-maven-3.9.4-bin.tar.gz
+    dest: /opt
+    remote_src: yes
+

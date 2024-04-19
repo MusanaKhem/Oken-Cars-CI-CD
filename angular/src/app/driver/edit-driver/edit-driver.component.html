@@ -1,0 +1,84 @@
+<app-header-driver></app-header-driver>
+<br><br><br><br>
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-header">
+      <strong>EDIT DRIVER</strong>
+    </div>
+    <br>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-4"><label>Lastname</label></div>
+        <div class="col-md-8">
+          <input [(ngModel)]="driver.lastname" id="lastname" (change)="validateLastName()" value ="{{driver.lastname}}" class="form-control" type="text" name="lastname">
+          <div *ngIf="!validateLastName()" class="text-danger" style="font-size: 11px;"><i>Please check the validity of your Last Name.</i></div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-4"><label>Firstname</label></div>
+        <div class="col-md-8">
+          <input [(ngModel)]="driver.firstname" value ="{{driver.firstname}}"  id="firstname" class="form-control" type="text" (change)="validateFirstName()" name="firstname">
+          <div *ngIf="!validateFirstName()" class="text-danger" style="font-size: 11px;"><i>Please check the validity of your first name.</i></div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-4"><label>Email</label></div>
+        <div class="col-md-8">
+          <input [(ngModel)]="driver.email" value ="{{driver.email}}"  value="{{driver.email}}" (change)="validateEmailAdress()" id="email" class="form-control" type="text" name="email">
+          <div *ngIf="!validateEmailAdress()" class="text-danger" style="font-size: 11px;"><i>Invalid email address.</i></div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <small>
+          Please enter your telephone number in international format, for example: +241 0924323145.
+        </small>
+        <div class="col-md-4"><label>Phone</label></div>
+        <div class="col-md-8">
+          <input [(ngModel)]="driver.phone" value="{{driver.phone}}" (change)="validatePhone()" id="phone" class="form-control" type="text" name="phone">
+          <div *ngIf="!validatePhone()" class="text-danger" style="font-size: 11px;"><i>Invalid phone number.</i></div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-4"><label>Address</label></div>
+        <div class="col-md-8">
+          <input [(ngModel)]="driver.address" value="{{driver.address}}" (change)="validateAddressCharacters()" id="address" class="form-control" type="text" name="address">
+          <div *ngIf="!validateAddressCharacters()" class="text-danger" style="font-size: 11px;"><i>Invalid characters in the address. Please use only letters, numbers, spaces, commas, and hyphens.</i></div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-4"><label>Permit</label></div>
+        <div class="col-md-8">
+          <select class="custom-select" id="selectTypePermit" [(ngModel)]="driver.permit" id="permit" class="form-control" type="text" name="permit">
+            <option value="A">A-	Motorcycles and scooters </option>
+            <option value="B">B-	Light motor vehicles, including passenger cars</option>
+            <option value="C">C-	Heavy vehicles, such as trucks and heavy goods vehicles</option>
+            <option value="D">D-	Public transportation vehicles, such as buses</option>
+            <option value="E">E-	Extension of the B or C license which allows you to drive vehicles with a trailer or semi-trailer</option>
+          </select>
+        </div>
+      </div>
+      <br><br>
+      <button class="btn btn-primary" (click)="editDriver()" [disabled]=" !validateLastName() || !validateFirstName() || !validateEmailAdress() || !validatePhone() || !validateAddressCharacters " >Update</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- Start - Section FOOTER - PIED DE PAGE - OK -->
+<section class="supfooter">
+  <footer class="footer">
+
+    <!-- Start - COPYRIGHT - OK -->
+    <div class="copyright text-center">
+      &copy;<p>2023<span> Oken Cars. </span>All rights reserved.</p>
+    </div>
+    <!-- End - COPYRIGHT - OK -->
+
+  </footer>
+</section>
+<!-- End - Section FOOTER - PIED DE PAGE - OK -->

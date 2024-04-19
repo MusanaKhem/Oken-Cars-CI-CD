@@ -1,0 +1,94 @@
+
+<div class="container-fluid" style="margin-top: 30px;">
+    <div class="card" >
+      <div class="card-header">
+        <strong>Owner REGISTRATION</strong>
+      </div>
+        <div class="card-body">
+          <br><br>
+          <div class="row">
+            <div class="col-md-4">
+              <label>FirstName <span class="required">*</span></label>
+            </div>
+            <div class="col-md-7">
+              <input [(ngModel)]="owner.firstname" id="firstname" class="form-control" type="text" name="firstname" (change)="validateFirstName()" required>
+              <div *ngIf="!validateFirstName()" class="text-danger" style="font-size: 11px;"><i>Please check the validity of your first name.</i></div>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-4">
+              <label>LastName <span class="required">*</span></label>
+            </div>
+            <div class="col-md-7">
+              <input [(ngModel)]="owner.lastname" id="lastname" class="form-control" type="text" name="lastname" (change)="validateLastName()" required>
+              <div *ngIf="!validateLastName()" class="text-danger" style="font-size: 11px;"><i>Please check the validity of your Last Name.</i></div>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <small>
+              Veuillez saisir votre numéro de téléphone au format international, par exemple : +241 0924323145.
+            </small>
+            <div class="col-md-4">
+              <label>Phone <span class="required">*</span></label>
+            </div>
+            <div class="col-md-7">
+              <input [(ngModel)]="owner.phone" id="phone" class="form-control"  type="text" name="phone" (change)="validatePhone()" required>
+              <div *ngIf="!validatePhone()" class="text-danger" style="font-size: 11px;"><i>Invalid phone number.</i></div>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-4">
+              <label>Email <span class="required">*</span></label>
+            </div>
+            <div class="col-md-7">
+              <input [(ngModel)]="owner.email" id="email" class="form-control" type="email" name="email" (change)="validateEmailAdress()" required>
+              <div *ngIf="!validateEmailAdress()" class="text-danger" style="font-size: 11px;"><i>Invalid email address.</i></div>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-4">
+              <label>Address <span class="required">*</span></label>
+            </div>
+            <div class="col-md-7">
+              <input [(ngModel)]="owner.address" id="address" class="form-control" type="text" name="address" (change)="validateAddressCharacters()" required>
+              <div *ngIf="!validateAddressCharacters()" class="text-danger" style="font-size: 11px;"><i>Invalid characters in the address. Please use only letters, numbers, spaces, commas, and hyphens.</i></div>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <small>
+              <i>Minimum 10 caractères,majuscules et minuscules, un caractère spéciale et un chiffre</i>
+            </small>
+            <div class="col-md-6"><input [(ngModel)]="owner.password" id="password" class="form-control" type="password" name="password" (change)="validatePassword()" required></div>
+            <div class="col-md-6"><input class="form-control"  [(ngModel)]="confirmPassword" name="confirmPassword" type="password" placeholder="Confirm Password"  (change)="validatePassword()" required></div>
+          </div>
+          <div class="col-md-5" *ngIf="passwordInvalid" class="text-danger" >Password must be at least 10 characters long, contain uppercase and lowercase letters, a special character, and a digit.</div>
+          <div class="col-md-5" *ngIf="!passwordsMatch" class="text-danger">Passwords do not match.</div>
+
+          <br><br>
+
+        <button class="btn btn-primary" (click)="saveOwner()" [disabled]=" !validateLastName() || !validateFirstName() || !validateEmailAdress() || !validatePhone() || passwordInvalid || !passwordsMatch  || !validateAddressCharacters || !isPasswordValid()" >Sign up</button>
+        </div>
+
+      </div>
+</div>
+
+<br><br>
+
+<!-- Start - Section FOOTER - PIED DE PAGE - OK -->
+<section class="supfooter">
+  <footer class="footer">
+
+    <!-- Start - COPYRIGHT - OK -->
+    <div class="copyright text-center">
+      &copy;<p>2023<span> Oken Cars. </span>All rights reserved.</p>
+    </div>
+    <!-- End - COPYRIGHT - OK -->
+
+  </footer>
+</section>
+<!-- End - Section FOOTER - PIED DE PAGE - OK -->

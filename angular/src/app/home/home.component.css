@@ -1,0 +1,87 @@
+.container{
+    border: 2px solid #1b9fb1;
+    position:fixed;
+    width: 40%;
+    height: 100%;
+    background-color: #1b9fb1;
+    display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh;
+}
+
+.logo{
+    margin-top: 2%;
+     height: 100px; /* Ajustez la hauteur fixe du logo */
+        width: 150px; /* Ajustez la largeur automatiquement pour conserver les proportions */
+}
+.welcome{
+
+     top:O;
+      right:0;
+    width: 60%;
+    height: 100%;
+         position:fixed;
+         margin-left: 40%;
+}
+h4{
+    color: white;
+}
+
+a{ color:white; }
+a:hover{color: red; font-size: 24px;}
+
+
+
+
+
+
+
+
+/* Start - COULEURS DU SITE - OK */
+:root{
+    --blanche: #ffff;
+    --black: #222;
+    --grey: #888;
+    --gold: #dec105;
+    --oken: #9e1db8;
+  }
+  /* End - COULEURS DU SITE - OK */
+  
+  /* Start - PARAMETRES SECTIONS - OK */
+  section{
+    padding:2rem 9%;
+  }
+  section:nth-child(even){
+    background: #f5f5f5;
+  }
+  /* End - PARAMETRES SECTIONS - OK */
+  
+  /* Start - Section FOOTER - OK */
+  .supfooter {
+  background: var(--grey);
+  width: 100%;
+  padding: 2rem 1%;
+  margin-top: 4rem;
+  line-height: 1.2rem;
+  padding: 0.75rem 1.5rem 0.75rem;
+  }
+    /* Start - Section COPYRIGHT -  */
+  .footer .copyright {
+  background: var(--grey);
+  padding: 1rem;
+  padding-top: 2rem;
+  margin-top: 0rem;
+  text-align: center;
+  font-size: 12px;
+  color: var(--black);
+  border-top: .5rem solid rgba(19, 169, 166, 0.3);
+  }
+  .footer .copyright a {
+  color: var(--oken);
+  }
+  .footer .copyright a:hover {
+  color: var(--gold);
+  }
+  .footer .copyright span {
+  color: var(--oken);
+  }    
+  /* End - Section COPYRIGHT -  */  
+  /* End - Section FOOTER -  */

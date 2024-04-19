@@ -1,0 +1,33 @@
+<app-header-owner></app-header-owner>
+<br><br><br><br><br>
+
+    <div class="container">
+          <br>
+          <img src="assets/pictures/profil.png" alt="Profil du owner">
+          <br><hr>
+          <div class="card-container" *ngIf="owner$ | async as owner">
+                <p><strong>FIRSTNAME :  </strong>{{owner.firstname}}</p>
+                <p><strong>LASTNAME :  </strong>{{owner.lastname}}</p>
+                <p><strong>PHONE :  </strong>{{owner.phone}}</p>
+                <p><strong>EMAIL :  </strong>{{owner.email}}</p>
+                <p><strong>ADDRESS :  </strong>{{owner.address}}</p>
+          </div>
+    </div>
+
+
+
+<br>
+
+<!-- Start - Section FOOTER - PIED DE PAGE - OK -->
+<section class="supfooter">
+  <footer class="footer">
+
+    <!-- Start - COPYRIGHT - OK -->
+    <div class="copyright text-center">
+      &copy;<p>2023<span> Oken Cars. </span>All rights reserved.</p>
+    </div>
+    <!-- End - COPYRIGHT - OK -->
+
+  </footer>
+</section>
+<!-- End - Section FOOTER - PIED DE PAGE - OK -->

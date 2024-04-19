@@ -1,0 +1,34 @@
+<app-header-customer></app-header-customer>
+<a class="nav-link" routerLink="/location-list">Location</a>
+<br><br><br><br><br>
+
+    <div class="container">
+          <br>
+          <img src="assets/pictures/profil.png" alt="Profil du customer">
+          <br><hr>
+          <div class="card-container" *ngIf="customer$ | async as customer">
+                <p><strong>FIRSTNAME :  </strong>{{customer.firstname}}</p>
+                <p><strong>LASTNAME :  </strong>{{customer.lastname}}</p>
+                <p><strong>PHONE :  </strong>{{customer.phone}}</p>
+                <p><strong>EMAIL :  </strong>{{customer.email}}</p>
+                <p><strong>ADDRESS :  </strong>{{customer.address}}</p>
+          </div>
+    </div>
+
+
+
+<br>
+
+<!-- Start - Section FOOTER - PIED DE PAGE - OK -->
+<section class="supfooter">
+  <footer class="footer">
+
+    <!-- Start - COPYRIGHT - OK -->
+    <div class="copyright text-center">
+      &copy;<p>2023<span> Oken Cars. </span>All rights reserved.</p>
+    </div>
+    <!-- End - COPYRIGHT - OK -->
+
+  </footer>
+</section>
+<!-- End - Section FOOTER - PIED DE PAGE - OK -->

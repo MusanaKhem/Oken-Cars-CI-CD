@@ -1,0 +1,37 @@
+table{
+    width : 70%;
+   margin: auto;
+}
+.table-container{
+   margin-top: 150px;
+}
+h4{
+    margin-left: 10%;
+
+}
+.eye-icon{
+    max-width: 100%;
+     width: 100%;
+     height: auto;
+     border: none; /* Annule les styles de bordure de Bootstrap */
+     background-color: transparent; /* Annule les styles de fond de Bootstrap */
+     padding: 0; /* Annule les styles de padding de Bootstrap */
+}
+img{
+  width:20px;
+  height:20px;
+}
+button{
+    z-index: 1;
+}
+/* Styles pour le conteneur du tableau */
+.table-container {
+  margin-top: 20vh; /* Marge supérieure égale à la hauteur de l'en-tête */
+}
+input{
+    margin-top: 15px;
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+

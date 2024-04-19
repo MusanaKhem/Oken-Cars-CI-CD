@@ -1,0 +1,78 @@
+<app-header-manager></app-header-manager>
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-header">
+      <strong>EDIT MANAGER</strong>
+    </div>
+    <div *ngIf="manager" style="width: 90%; margin-left: 5%; margin-right:5%;" >
+      <br><br>
+      <form (ngSubmit)="updateManager()" #editFormManager="ngForm">
+
+        <div class="row">
+          <div class="col-md-4"><label>Name</label></div>
+          <div class="col-md-8">
+            <input class="form-control" type="text" value="{{ manager.lastname }}" [(ngModel)]="manager.lastname" (change)="validateLastName()" name="lastname">
+            <div *ngIf="!validateLastName()" class="text-danger" style="font-size: 11px;"><i>Please check the validity of your Last Name.</i></div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-4"><label>First Name</label></div>
+          <div class="col-md-8">
+            <input class="form-control" type="text" value="{{ manager.firstname }}" [(ngModel)]="manager.firstname" (change)="validateFirstName()" name="firstname">
+            <div *ngIf="!validateFirstName()" class="text-danger" style="font-size: 11px;"><i>Please check the validity of your first name.</i></div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-4"><label>Email Address</label></div>
+          <div class="col-md-8">
+            <input class="form-control" type="email" value="{{ manager.email }}" [(ngModel)]="manager.email" (change)="validateEmailAdress()" name="email">
+            <div *ngIf="!validateEmailAdress()" class="text-danger" style="font-size: 11px;"><i>Invalid email address.</i></div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <small>
+            Please enter your telephone number in international format, for example: +241 0924323145.
+          </small>
+          <div class="col-md-4"><label>Phone number</label></div>
+          <div class="col-md-8">
+            <input class="form-control" type="text" value="{{ manager.phone }}" [(ngModel)]="manager.phone" (change)="validatePhone()" name="phone">
+            <div *ngIf="!validatePhone()" class="text-danger" style="font-size: 11px;"><i>Invalid phone number.</i></div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-4"><label>Address</label></div>
+          <div class="col-md-8">
+            <input class="form-control" type="text" value="{{ manager.address }}" [(ngModel)]="manager.address" (change)="validateAddressCharacters()" name="address">
+            <div *ngIf="!validateAddressCharacters()" class="text-danger" style="font-size: 11px;"><i>Invalid characters in the address. Please use only letters, numbers, spaces, commas, and hyphens.</i></div>
+          </div>
+        </div>
+
+        <br><br>
+        <button type="submit" class="btn btn-outline-info"  [disabled]=" !validateLastName() || !validateFirstName() || !validateEmailAdress() || !validatePhone() || !validateAddressCharacters ">Update</button>
+      </form>
+      <br>
+
+    </div>
+
+  </div>
+
+  <br><br>
+</div>
+
+<!-- Start - Section FOOTER - PIED DE PAGE - OK -->
+<section class="supfooter">
+  <footer class="footer">
+
+    <!-- Start - COPYRIGHT - OK -->
+    <div class="copyright text-center">
+      &copy;<p>2023<span> Oken Cars. </span>All rights reserved.</p>
+    </div>
+    <!-- End - COPYRIGHT - OK -->
+
+  </footer>
+</section>
+<!-- End - Section FOOTER - PIED DE PAGE - OK -->

@@ -1,0 +1,55 @@
+/* Start - COULEURS DU SITE - OK */
+:root{
+    --blanche: #ffff;
+    --black: #222;
+    --grey: #888;
+    --gold: #dec105;
+    --oken: #9e1db8;
+}
+/* End - COULEURS DU SITE - OK */
+
+/* You can add global styles to this file, and also import other style files */
+.card-footer{
+font-size: 10px;
+}
+
+/* Start - PARAMETRES SECTIONS - OK */
+section{
+    padding:2rem 5%;
+}
+section:nth-child(even){
+    background: #f5f5f5;
+}
+/* End - PARAMETRES SECTIONS - OK */
+
+/* Start - Section FOOTER - OK */
+.supfooter {
+  background: var(--blanche);
+  width: 100%;
+  padding: 2rem 1%;
+  margin-top: 2rem;
+  line-height: 1.0rem;
+  padding: 0.75rem 1.5rem 0.75rem;
+}
+    /* Start - Section COPYRIGHT -  */
+.footer .copyright {
+  background: var(--grey);
+  padding: 1rem;
+  padding-top: 2rem;
+  margin-top: 0rem;
+  text-align: center;
+  font-size: 12px;
+  color: var(--black);
+  border-top: .4rem solid rgba(19, 169, 166, 0.3);
+}
+.footer .copyright a {
+  color: var(--oken);
+}
+.footer .copyright a:hover {
+  color: var(--gold);
+}
+.footer .copyright span {
+  color: var(--oken);
+}    
+  /* End - Section COPYRIGHT -  */  
+/* End - Section FOOTER -  */ 

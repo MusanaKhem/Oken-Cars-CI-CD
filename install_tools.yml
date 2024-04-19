@@ -1,0 +1,21 @@
+---
+- hosts: all
+  become: true
+  roles:
+    - role: ssh
+      vars:
+        ufw_ports:
+          - "22/tcp"
+    - role: java
+    - role: maven
+    - role: nodejs
+    - role: docker_compose
+    - role: ufw
+      vars:
+        ufw_ports:
+          - "80/tcp"
+          - "443/tcp"
+          - "8081/tcp"
+          - "30303/tcp"
+          - "5432/tcp"
+          - "4200/tcp"

@@ -1,0 +1,16 @@
+.container-fluid{
+    margin-top: 130px;
+}
+
+.card{
+  margin-top: 50px;
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+small{
+  margin: auto;
+  color: rgb(117,142,255);
+}
+

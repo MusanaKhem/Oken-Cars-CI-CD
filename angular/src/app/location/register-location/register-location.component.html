@@ -1,0 +1,60 @@
+<app-header-location></app-header-location>
+<br>
+<br>
+<br>
+<br>
+<div class="container-fluid" style="margin-top: 50px;">
+    <div class="card" >
+      <div class="card-header">
+        <strong>LOCATION REGISTRATION</strong>
+      </div>
+        <div class="card-body">
+          <br>
+          <div class="row">
+            <div class="col-md-4">
+              <label>CreateDate</label>
+            </div>
+            <div class="col-md-7">
+              <input [(ngModel)]="location.createDate" id="createDate" class="form-control" type="date" name="createDate" required>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-4">
+              <label>Date End</label>
+            </div>
+            <div class="col-md-7">
+              <input [(ngModel)]="location.finDate" id="finDate" class="form-control"  type="date" name="finDate" required>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-4">
+              <label>price</label>
+            </div>
+            <div class="col-md-7">
+              <input [(ngModel)]="location.price" id="price" class="form-control" type="number" price="price" required>
+            </div>
+          </div>
+          <br><br>
+        <button class="btn btn-primary" (click)="saveLocation()">Save</button>
+        </div>
+
+      </div>
+</div>
+
+<br><br>
+
+<!-- Start - Section FOOTER - PIED DE PAGE - OK -->
+<section class="supfooter">
+  <footer class="footer">
+
+    <!-- Start - COPYRIGHT - OK -->
+    <div class="copyright text-center">
+      &copy;<p>2023<span> Oken Cars. </span>All rights reserved.</p>
+    </div>
+    <!-- End - COPYRIGHT - OK -->
+
+  </footer>
+</section>
+<!-- End - Section FOOTER - PIED DE PAGE - OK -->

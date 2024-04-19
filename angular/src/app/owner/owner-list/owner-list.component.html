@@ -1,0 +1,64 @@
+<app-header-owner></app-header-owner>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<input [(ngModel)]="searchText" type="search" class="form-control" placeholder="search" style=" margin-left: 2%; margin-top: 15px; width: 40%; padding: 2px 20px;  height: 30px;">
+<br>
+<div class="container-fluid"><br><br>
+  <!-- Owner list table -->
+  <table class="table table-hover " >
+    <thead>
+    <tr><h4>Owners List</h4><br></tr>
+      <tr class="table-secondary">
+        <th>Id</th>
+          <th>FirstName</th>
+          <th>LastName</th>
+          <th>Email</th>
+          <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let owner of owners | FilterPipe:searchText">
+        <td>{{ owner.id }}</td>
+        <td>{{ owner.firstname }}</td>
+        <td>{{ owner.lastname }}</td>
+        <td>{{ owner.email }}</td>
+        <td>
+          <div class="row" >
+            <div class="col-sm-3">
+              <button class="btn btn-outline-success" [routerLink]="['/owner', owner.id]">See</button>
+            </div>
+            <div class="col-sm-3">
+              <button class="btn btn-warning" style="margin-right: 10px;" [routerLink]="['/edit-owner', owner.id]">Edit</button>
+            </div>
+            <div class="col-sm-3">
+              <button class="btn btn-danger" (click)="deleteOwner(owner.id)">Del</button>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+   <tfoot>
+
+   </tfoot>
+  </table>
+
+</div>
+
+
+<!-- Start - Section FOOTER - PIED DE PAGE - OK -->
+<section class="supfooter">
+  <footer class="footer">
+
+    <!-- Start - COPYRIGHT - OK -->
+    <div class="copyright text-center">
+      &copy;<p>2023<span> Oken Cars. </span>All rights reserved.</p>
+    </div>
+    <!-- End - COPYRIGHT - OK -->
+
+  </footer>
+</section>
+<!-- End - Section FOOTER - PIED DE PAGE - OK -->

@@ -1,0 +1,6 @@
+
+- name: install oken-cars
+  hosts: all
+  become: yes
+  roles:
+    - build_oken_cars

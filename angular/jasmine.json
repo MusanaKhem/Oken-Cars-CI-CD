@@ -1,0 +1,20 @@
+{
+    "spec_dir": "driver",
+    "spec_files": [
+      "**/*[sS]pec.js"
+    ],
+    "helpers": [
+      "helpers/**/*.js"
+    ],
+    "random": false,
+    "stopSpecOnExpectationFailure": false,
+    "reporters": [
+      {
+        "name": "jasmine-spec-reporter",
+        "options": {
+          "displayStacktrace": "all"
+        }
+      }
+    ]
+  }
+  

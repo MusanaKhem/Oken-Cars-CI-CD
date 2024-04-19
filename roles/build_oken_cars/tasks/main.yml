@@ -1,0 +1,3 @@
+---
+- name: Exécuter le script de construction oken-cars
+  ansible.builtin.shell: "bash {{ role_path }}/files/oken-cars-build.sh"

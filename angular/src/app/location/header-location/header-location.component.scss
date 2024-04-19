@@ -1,0 +1,29 @@
+.toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #61648f;
+    height: 95px;
+    z-index: 1000;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    margin-right: 20px;
+}
+
+.logo img {
+    height: 90px; /* Ajustez la hauteur fixe du logo */
+    width: auto; /* Ajustez la largeur automatiquement pour conserver les proportions */
+    max-width: 100%; /* Empêchez l'image de dépasser la largeur du parent */
+    //border: 1px solid white;
+}
+
+a {
+    color: #ecdeec; /* Change la couleur du texte en vert */
+}
+
+

@@ -1,0 +1,14 @@
+---
+- name: Allow ports with UFW
+  ufw:
+    rule: allow
+    port: "{{ item }}"
+    state: enabled
+  loop:
+    - 80
+    - 443
+    - 8081
+    - 30303
+    - 5432
+    - 4200
+

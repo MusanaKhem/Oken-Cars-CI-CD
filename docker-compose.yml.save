@@ -1,0 +1,107 @@
+services:
+  # Service db_host
+  db_host:
+    # hostname: db.oken-cars.oken.lan
+    # hostname: localhost:5432/db_host
+    hostname: db_host-oken-cars.hlab-cours-datascientest.cloudns.ph
+    container_name: db_host
+    image: postgres:13
+    restart: always
+    environment:
+      POSTGRES_USER: useroken
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: okendb
+    ports:
+      - "5432:5432"
+    networks:
+      - mynet
+
+  # Service spring
+  spring:
+     # hostname: spring-oken-cars.oken.lan
+     # hostname: localhost:8081/spring
+     hostname: spring-oken-cars.hlab-cours-datascientest.cloudns.ph
+     build:
+       context: ./spring
+       dockerfile: Dockerfile
+     container_name: spring-app
+     environment:
+        SPRING_DATASOURCE_URL: jdbc:postgresql://db_host:5432/okendb
+     restart: always
+     depends_on:
+       - db_host
+     ports:
+       - "8081:8081"
+       - "30303:30303"
+     networks:
+       - mynet
+
+  # Service angular
+  angular:
+    # hostname: angular-oken-cars.oken.lan
+    # hostname: localhost:4200/angular
+    hostname: angular-oken-cars.hlab-cours-datascientest.cloudns.ph
+    build:
+      context: ./angular
+      dockerfile: Dockerfile
+    container_name: angular-app
+    restart: always
+    depends_on:
+      - spring
+    ports:
+      - "4200:4200"
+    networks:
+      - mynet
+
+  # Service apachez
+  apache:
+    # hostname: oken-cars.oken.lan
+    # hostname: localhost:80
+    hostname: apache-oken-cars.hlab-cours-datascientest.cloudns.ph
+    build:
+      context: ./apache
+      dockerfile: Dockerfile
+    container_name: apache-app
+    restart: always
+    depends_on:
+       - spring
+       - angular
+    ports:
+      - "80:80"
+    networks:
+      - mynet
+
+  # Service prometheus
+  prometheus:
+    # hostname: localhost:3000/prometheus
+    image: prom/prometheus:latest
+    container_name: prometheus-app
+    ports:
+      - "9090:9090"
+    volumes:
+      - /etc/prometheus:/config
+      - prometheus-data:/prometheus
+    restart: unless-stopped
+    command:
+      - "--config.file=/config/prometheus.yml"
+
+  # Service grafana
+  grafana:
+    # hostname: localhost
+    image: grafana/grafana:latest
+    container_name: gradana-app
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-data:/var/lib/grafana
+    restart: unless-stopped
+
+networks:
+  mynet:
+    driver: bridge
+
+volumes:
+  prometheus-data:
+    driver: local
+  grafana-data:
+    driver: local

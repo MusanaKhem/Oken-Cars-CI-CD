@@ -1,0 +1,8 @@
+---
+- name: Install Node.js 21.6.1
+  become: yes
+  shell: |
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+    source ~/.bashrc
+    nvm install 21.6.1
+    nvm use 21.6.1

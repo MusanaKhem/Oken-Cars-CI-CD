@@ -1,0 +1,35 @@
+<app-header-manager></app-header-manager>
+
+<div class="container" style="margin-top: 120px;" >
+  <br>
+
+  <img src="assets/pictures/profil.png" alt="Profil du manager">
+ <br><hr>
+  <br>
+  <div *ngIf="manager$ | async as manager" >
+    <p><strong>Name : </strong>{{ manager.lastname }}</p>
+    <p><strong>First Name : </strong>{{ manager.firstname }}</p>
+    <p><strong>Email Adress : </strong>{{ manager.email }}</p>
+    <p><strong>Phone number : </strong>{{ manager.phone }}</p>
+    <p><strong>Address : </strong>{{ manager.address }}</p>
+    <br>
+  </div>
+
+</div>
+
+
+<br>
+
+<!-- Start - Section FOOTER - PIED DE PAGE - OK -->
+<section class="supfooter">
+  <footer class="footer">
+
+    <!-- Start - COPYRIGHT - OK -->
+    <div class="copyright text-center">
+      &copy;<p>2023<span> Oken Cars. </span>All rights reserved.</p>
+    </div>
+    <!-- End - COPYRIGHT - OK -->
+
+  </footer>
+</section>
+<!-- End - Section FOOTER - PIED DE PAGE - OK -->

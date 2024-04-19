@@ -1,0 +1,33 @@
+<app-header-car></app-header-car>
+<div class="container" style="margin-top: 120px;" >
+  <br>
+
+  <img src="https://i.pinimg.com/originals/41/c2/1e/41c21ec4f5e84ab870744e33df32188a.jpg" alt="Profil du manager">
+  <br><hr>
+  <br>
+  <div *ngIf="car$ | async as car" >
+    <p><strong>Brand : </strong>{{ car.brand }}</p>
+    <p><strong>Model: </strong>{{ car.model }}</p>
+    <p><strong>Color of car : </strong>{{ car.color }}</p>
+    <p><strong>Mileage of car : </strong>{{ car.mileage }} km</p>
+    <br>
+  </div>
+
+</div>
+
+
+<br>
+
+<!-- Start - Section FOOTER - PIED DE PAGE - OK -->
+<section class="supfooter">
+  <footer class="footer">
+
+    <!-- Start - COPYRIGHT - OK -->
+    <div class="copyright text-center">
+      &copy;<p>2023<span> Oken Cars. </span>All rights reserved.</p>
+    </div>
+    <!-- End - COPYRIGHT - OK -->
+
+  </footer>
+</section>
+<!-- End - Section FOOTER - PIED DE PAGE - OK -->

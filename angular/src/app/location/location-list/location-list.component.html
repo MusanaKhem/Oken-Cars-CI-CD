@@ -1,0 +1,62 @@
+<app-header-location></app-header-location>
+<br>
+<br>
+<br>
+<br>
+<input [(ngModel)]="searchText" type="search" class="form-control" placeholder="search" style=" margin-left: 2%; margin-top: 15px; width: 40%; padding: 2px 20px;  height: 30px;">
+<br>
+<div class="container-fluid"><br><br>
+  <!-- Location list table -->
+  <!-- Add <th> headers to this -->
+  <table class="table table-hover " >
+    <thead>
+    <tr><h4>locations List</h4><br></tr>
+      <tr class="table-secondary">
+        <th>Id</th>
+          <th>Date Start</th>
+          <th>Date End</th>
+          <th>Price</th>
+          <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let location of locations | FilterPipe:searchText">
+        <td>{{ location.id }}</td>
+        <td>{{ location.createDate }}</td>
+        <td>{{ location.finDate }}</td>
+        <td>{{ location.price }}</td>
+        <td>
+          <div class="row" >
+            <div class="col-sm-3">
+              <button class="btn btn-outline-success" [routerLink]="['/location', location.id]">See</button>
+            </div>
+            <div class="col-sm-3">
+              <button class="btn btn-warning" style="margin-right: 10px;" [routerLink]="['/edit-location', location.id]">Edit</button>
+            </div>
+            <div class="col-sm-3">
+              <button class="btn btn-danger" (click)="deleteLocation(location.id)">Del</button>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+   <tfoot>
+
+   </tfoot>
+  </table>
+
+</div>
+
+<!-- Start - Section FOOTER - PIED DE PAGE - OK -->
+<section class="supfooter">
+  <footer class="footer">
+
+    <!-- Start - COPYRIGHT - OK -->
+    <div class="copyright text-center">
+      &copy;<p>2023<span> Oken Cars. </span>All rights reserved.</p>
+    </div>
+    <!-- End - COPYRIGHT - OK -->
+
+  </footer>
+</section>
+<!-- End - Section FOOTER - PIED DE PAGE - OK -->

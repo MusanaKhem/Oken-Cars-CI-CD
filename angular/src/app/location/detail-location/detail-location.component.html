@@ -1,0 +1,31 @@
+<app-header-location></app-header-location>
+<br><br><br><br><br>
+
+    <div class="container">
+          <br>
+          <img src="assets/pictures/rentcar.jpg" alt="Rent du location">
+          <br><hr>
+          <div class="card-container" *ngIf="location$ | async as location">
+                <p><strong>Create Date :  </strong>{{location.createDate}}</p>
+                <p><strong>Finish Date :  </strong>{{location.finDate}}</p>
+                <p><strong>price :  </strong>{{location.price}}</p>
+          </div>
+    </div>
+
+
+
+<br>
+
+<!-- Start - Section FOOTER - PIED DE PAGE - OK -->
+<section class="supfooter">
+      <footer class="footer">
+    
+        <!-- Start - COPYRIGHT - OK -->
+        <div class="copyright text-center">
+          &copy;<p>2023<span> Oken Cars. </span>All rights reserved.</p>
+        </div>
+        <!-- End - COPYRIGHT - OK -->
+    
+      </footer>
+    </section>
+    <!-- End - Section FOOTER - PIED DE PAGE - OK -->

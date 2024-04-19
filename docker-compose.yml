@@ -1,0 +1,60 @@
+services:
+  db_host:
+    hostname: db.oken-cars.oken.lan
+    container_name: db_host
+    image: postgres:13
+    restart: always
+    environment:
+      POSTGRES_USER: useroken
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: okendb
+    ports:
+      - "5432:5432"
+    networks:
+      - mynet
+  spring:
+     hostname: spring-oken-cars.oken.lan
+     build:
+       context: ./spring
+       dockerfile: Dockerfile
+     container_name: spring-app
+     environment:
+        SPRING_DATASOURCE_URL: jdbc:postgresql://db_host:5432/okendb
+     restart: always
+     depends_on:
+       - db_host
+     ports:
+       - "8081:8081"
+       - "30303:30303"
+     networks:
+       - mynet
+  angular:
+    hostname: angular-oken-cars.oken.lan
+    build:
+      context: ./angular
+      dockerfile: Dockerfile
+    container_name: angular-app
+    restart: always
+    depends_on:
+      - spring
+    ports:
+      - "4200:4200"
+    networks:
+      - mynet     
+  apache:
+    hostname: oken-cars.oken.lan
+    build:
+      context: ./apache
+      dockerfile: Dockerfile
+    container_name: apache-app
+    restart: always
+    depends_on:
+       - spring
+       - angular
+    ports:
+      - "80:80"
+    networks:
+      - mynet
+networks:
+  mynet:
+    driver: bridge

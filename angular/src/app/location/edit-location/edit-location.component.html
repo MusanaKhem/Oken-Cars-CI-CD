@@ -1,0 +1,40 @@
+<app-header-location></app-header-location>
+<br><br><br><br>
+<div class="container-fluid">
+    <div class="card" style="width: 50%; margin: 10px auto;">
+      <div class="card-header">
+        <strong>EDIT location</strong>
+      </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="name">createDate</label>
+                <input [(ngModel)]="location.createDate" id="createDate" class="form-control" type="date" name="createDate">
+            </div>
+            <div class="form-group">
+              <label for="name">Date End</label>
+              <input [(ngModel)]="location.finDate" id="finDate" class="form-control" type="date" name="finDate">
+          </div>    
+            <div class="form-group">
+                <label for="name">Price</label>
+                <input [(ngModel)]="location.price" id="price" class="form-control" type="number" name="price">
+            </div>
+
+          <td><button class="btn btn-primary" (click)="editLocation()">Update</button></td>
+          </div>
+
+      </div>
+</div>
+
+<!-- Start - Section FOOTER - PIED DE PAGE - OK -->
+<section class="supfooter">
+  <footer class="footer">
+
+    <!-- Start - COPYRIGHT - OK -->
+    <div class="copyright text-center">
+      &copy;<p>2023<span> Oken Cars. </span>All rights reserved.</p>
+    </div>
+    <!-- End - COPYRIGHT - OK -->
+
+  </footer>
+</section>
+<!-- End - Section FOOTER - PIED DE PAGE - OK -->

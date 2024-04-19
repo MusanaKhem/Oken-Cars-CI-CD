@@ -1,0 +1,54 @@
+<app-header-car></app-header-car>
+<div class="container-fluid"><br><br><br>
+  <!-- Car description -->
+  <table class="table table-hover">
+    <thead>
+    <tr><h4>Cars List</h4><br></tr>
+    <tr class="thead-dark">
+      <th>Id</th>
+      <th>Brand</th>
+      <th>Model</th>
+      <th>Color</th>
+      <th>Options</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let car of cars ">
+      <td>{{ car.id }}</td>
+      <td>{{ car.brand }}</td>
+      <td>{{ car.model }}</td>
+      <td>{{ car.color }}</td>
+      <td>
+        <div class="row" >
+          <div class="col-sm-3">
+            <button type="button" id="viewButton" class="btn btn-outline-success" (click)="onViewCar(car.id)">See</button>
+          </div>
+          <div class="col-sm-3">
+            <button type="button" id="editButton" class="btn btn-outline-primary" (click)="onCarUpdate(car.id)">Edit</button>
+          </div>
+          <div class="col-sm-3">
+            <button type="button" id="deleteButton" class="btn btn-outline-danger" (click)="onDeleteCar(car.id)">Del</button>
+          </div>
+        </div>
+
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Start - Section FOOTER - PIED DE PAGE - OK -->
+<section class="supfooter">
+  <footer class="footer">
+
+    <!-- Start - COPYRIGHT - OK -->
+    <div class="copyright text-center">
+      &copy;<p>2023<span> Oken Cars. </span>All rights reserved.</p>
+    </div>
+    <!-- End - COPYRIGHT - OK -->
+
+  </footer>
+</section>
+<!-- End - Section FOOTER - PIED DE PAGE - OK -->
+
