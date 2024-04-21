@@ -21,10 +21,7 @@
     "bcrypt": "^5.1.1",
     "cjs-loader": "^0.1.0",
     "rxjs": "~7.8.0",
-    "zone.js": "~0.13.0",
-    "postcss": "^8.4.31",
-    "vite": "^4.5.3",
-    "webpack-dev-middleware": "^6.1.2"
+    "zone.js": "~0.13.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.1.8",

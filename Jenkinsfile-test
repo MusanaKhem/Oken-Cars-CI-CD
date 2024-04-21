@@ -14,7 +14,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Hello World'
-                sh "mvn clean install -DskipTests"
+                sh "cd spring mvn clean install -DskipTests"
             }
         }
     }

@@ -1,0 +1,22 @@
+# datasources.yaml
+apiVersion: 1
+datasources:
+  - name: Prometheus
+    type: prometheus
+    url: http://prometheus:9090
+    access: proxy
+  - name: Apache
+    type: apache
+    url: http://localhost:80
+  - name: Apache
+    type: apache
+    url: http://localhost:80
+  - name: Angular
+    type: angular
+    url: http://localhost:4200
+  - name: spring
+    type: spring
+    url: http://localhost:8081
+  - name: Db_Host
+    type: db_host
+    url: http://localhost:5432
